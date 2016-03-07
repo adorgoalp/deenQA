@@ -50,7 +50,7 @@ include_once './backendless/autoload.php';
                             <tbody>
                                 <?php
                                 $query = new BackendlessDataQuery();
-                                $query->setPageSize(12);
+                                $query->setPageSize(10);
                                 $query->addProp('title');
                                 $query->addProp('objectId');
                                 $data = Backendless::$Data->of('QA')->find($query)->getAsArray();

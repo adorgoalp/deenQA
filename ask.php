@@ -36,8 +36,9 @@ and open the template in the editor.
         use backendless\Backendless;
         use backendless\exception\BackendlessException;
         use backendless\services\persistence\BackendlessDataQuery;
+        use PendingQA;
 
-include_once './backendless/autoload.php';
+        include_once './backendless/autoload.php';
         Backendless::initApp('0F8F33A0-5515-0C9B-FFCB-F8A0A3E92A00', 'B1ACD24E-02A7-E964-FFA0-7D0ABB2FFD00', 'v1');
         include_once './deenQA_lib.php';
         ?>
@@ -49,133 +50,95 @@ include_once './backendless/autoload.php';
         <div id='cssmenu'>
             <ul>
                 <li><a href='index.php'>DeenQA Home</a></li>
-                <li class='active'><a href='ask.php'>Ask</a></li>
+                <li><a href='search.php'>Search</a></li>
                 <li><a href='category.php'>Category</a></li>
+                <li class='active'><a href='ask.php'>Ask</a></li>
                 <li><a href='about.php'>About</a></li>
-                <li>
-                    <div style="margin-top: 8px; float: right;">
-                        <form class="pure-form">
-                            <input type="text" name="searchtext" style="margin-right: 8px;">
-                            <button type="submit" class="pure-button pure-button-primary">Search</button>
-                        </form>
-                    </div>
-                </li>
             </ul>
         </div>
         <div class="container">
             <div class="panel panel-default" style="margin-top: 20px;">
                 <div class="panel-body">
                     <fieldset>
-                        <legend>Ask us a question</legend>
+                        <legend>আপনার জিজ্ঞাসা</legend>
                         <p>
                             আসসালামু আলাইকুম,<br>
                             প্রশ্ন করার আগে প্রশ্ন করার নিয়ম গুলো জেনে নিন।<br>
                         </p>
                         <ul>
-                            <li>আগে ভালো ভাবে সার্চ করে দেখুন আপনি যেই প্রশ্নের উত্তর চান তা আগেই দেয়া হয়ে গেছে কিনা। 
+                            <li>আগে ভালো ভাবে <a href="search.php">সার্চ </a> করে দেখুন আপনি যেই প্রশ্নের উত্তর চান তা আগেই দেয়া হয়ে গেছে কিনা। 
                                 <br>
                                 আগে উত্তর দেয়া হলে প্রশ্ন করা থেকে বিরত থাকুন।</li>
                             <li>একটা প্রশ্নের উত্তর দিতে ওলামা হযরতগণের অনেক মূল্যবান সময় ব্যায় করতে হয়। 
                                 <br>
                                 তাই প্রশ্নের উত্তর আগে দেয়া থাকলে প্রশ্ন করা থেকে বিরত থাকুন।</li>
                             <li>একবারে একটি বিষয়ে প্রশ্ন করুন। একাধিক প্রশ্ন করা থেকে বিরত থাকুন।</li>
+                            <li>বাংলায় প্রশ্ন করুন</li>
                         </ul>
                     </fieldset>
                     <fieldset>
-                        <legend>আপনার প্রশ্নের কি ওয়ার্ড  লিখে সার্চ  করুন</legend>
-                        <ul><li>যেমন নামাজ বিষয়ক প্রশ্ন থাকলে সালাত,নামাজ লিখে সার্চ  করুন</li></ul>
+                        <legend>আপনার প্রশ্নের কি ওয়ার্ড  লিখে <a href="search.php">সার্চ </a>  করুন</legend>
+                        <ul>
+                            <li>যেমন নামাজ বিষয়ক প্রশ্ন থাকলে সালাত,নামাজ লিখে <a href="search.php">সার্চ </a>  করুন</li>
+                            <li>জায়েজ-নাজায়েজ বিষয়ক প্রশ্ন থাকলে জায়েজ,নাজায়েজ লিখে <a href="search.php">সার্চ </a>  করুন</li>
+                            <li>প্রতিটি <a href="category.php"> ক্যাটাগরিতে</a> ভালো ভাবে খোজ করুন</li>
+                        </ul>
 
                     </fieldset>
-                    <form method="post" action="ask.php">
-                        <div class="form-group">
-                            <select class="form-control" id="searchbox2" name="searchtext[]" multiple required>
-                            </select>
-                        </div>
-                        <button name="search" type="submit" class="pure-button pure-button-primary" style="float: right; margin-top: 10px;">Search</button>
-                    </form>
-                    <div class="clearfix"></div>
-                    <table class="table table-striped">
-                        <tbody>
+                    <fieldset>
+                        <legend><a href="search.php">সার্চ </a> করে না পেলে নিচের ফর্মে আপনার প্রশ্নটি করুন</legend>
+                        <form action="ask.php" method="post">
+                            <div class="form-group">
+                                <label>প্রশ্ন</label>
+                                <textarea name="question" class="form-control" rows="8" required ></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label>আপনার নাম</label>
+                                <input name="askerName" type="text" class="form-control" required id="askername">
+                            </div>
+                            <div class="form-group">
+                                <input type="checkbox" id="noname" name="noname">
+                                <label>নাম প্রকাশে অনিচ্ছুক</label>
+                            </div>
+                            <script>
+                                document.getElementById('noname').onchange = function () {
+                                    document.getElementById('askername').disabled = this.checked;
+                                };
+                            </script>
+                            <div class="form-group">
+                                <label>আপনার ইমেইল</label>
+                                <input name="email" type="email" class="form-control">
+                            </div>
+                            <div class="pure-form-message">
                             <?php
-                            if (isset($_POST['search'])) {
-                                echo '<hr>';
-                                $searchWords = $_POST['searchtext'];
-                                $whereClause = "";
-                                foreach ($searchWords as $sw) {
-                                    $whereClause.= "question LIKE  '%$sw%' OR category LIKE  '%$sw%' OR ";
-                                }
-                                $whereClause = substr($whereClause, 0, strlen($whereClause) - 3);
-                                
-                                $_SESSION['sc'] = $whereClause;
-                                //echo $whereClause;
-                                if (isset($_GET['offset'])) {
-                                    $offset = $_GET['offset'];
-                                    if (!$offset || $offset < 0) {
-                                        $offset = 0;
-                                    }
+                            if (isset($_POST['submitQuestion'])) {
+                                $question = filter_input(INPUT_POST, 'question');
+                                $askerName = "";
+                                if (isset($_POST['noname'])) {
+                                    $askerName = "নাম প্রকাশে অনিচ্ছুক";
                                 } else {
-                                    $offset = 0;
-                                }
-                                $query = new BackendlessDataQuery();
-                                $query->setWhereClause($whereClause);
-                                $query->addProp('title');
-                                $query->addProp('objectId');
-                                $query->setPageSize(10);
-                                $query->setOffset($offset);
-                                $data = Backendless::$Data->of('QA')->find($query)->getAsArray();
-                                $i = 1;
-                                foreach ($data as $d) {
-                                    echo '<tr>';
-                                    echo '<td>' . $i++ . '</td>';
-                                    echo '<td>' . $d['title'] . '</td>';
-                                    echo '<td><a href="viewQA.php?q=' . $d['objectId'] . '" target="_blank">View full QA</a></td>';
-                                    echo '</tr>';
-                                }
-                            } else if (isset ($_SESSION['sc'])){
-                                if (isset($_GET['offset'])) {
-                                    $offset = $_GET['offset'];
-                                    if (!$offset || $offset < 0) {
-                                        $offset = 0;
+                                    $askerName = filter_input(INPUT_POST, 'askerName');
+                                    if ($askerName === '') {
+                                        $askerName = "নাম প্রকাশে অনিচ্ছুক";
                                     }
-                                } else {
-                                    $offset = 0;
                                 }
-                                $whereClause = $_SESSION['sc'];
-                                $query = new BackendlessDataQuery();
-                                $query->setWhereClause($whereClause);
-                                $query->addProp('title');
-                                $query->addProp('objectId');
-                                $query->setPageSize(10);
-                                $query->setOffset($offset);
-                                $data = Backendless::$Data->of('QA')->find($query)->getAsArray();
-                                $i = 1;
-                                foreach ($data as $d) {
-                                    echo '<tr>';
-                                    echo '<td>' . $i++ . '</td>';
-                                    echo '<td>' . $d['title'] . '</td>';
-                                    echo '<td><a href="viewQA.php?q=' . $d['objectId'] . '" target="_blank">View full QA</a></td>';
-                                    echo '</tr>';
+                                $email = filter_input(INPUT_POST, 'email');
+                                $qa = new PendingQA($question, $askerName, $email);
+                                try {
+                                    $savedQA = Backendless::$Persistence->save($qa);
+                                    if ($savedQA !== NULL) {
+                                        echo 'Alhamdulillah! Your question submitted successfully.';
+                                    }
+                                } catch (BackendlessException $ex) {
+                                    echo $ex->getMessage();
                                 }
                             }
                             ?>
-                        </tbody>
-                    </table>
-                    <nav>
-                        <ul class="pager">
-                            <?php
-                            if ($offset == 0) {
-                                echo '<li class="disabled"><a href="#">Previous</a></li>';
-                            } else {
-                                echo '<li><a href="ask.php?offset=' . ($offset - 10) . '">Previous</a></li>';
-                            }
-                            if (count($data) < 10) {
-                                echo '<li class="disabled"><a href="#">Next</a></li>';
-                            } else {
-                                echo '<li><a href="ask.php?offset=' . ($offset + 10) . '">Next</a></li>';
-                            }
-                            ?>
-                        </ul>
-                    </nav>
+                            </div>
+                            <input class="pure-button pure-button-primary" name="submitQuestion" type="submit" value="Submit Question" style="float: right; margin-top: 10px;">
+                        </form>
+
+                    </fieldset>
                 </div>
             </div>
         </div>

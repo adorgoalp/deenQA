@@ -58,7 +58,10 @@ include_once './backendless/autoload.php';
         <div class="container">
             <div class="panel panel-default" style="margin-top: 20px;">
                 <div class="panel-body">
-                    <form method="post" action="ask.php">
+                    <fieldset>
+                        <legend>সার্চ  করুন। বাংলায় লিখুন।</legend>
+                    </fieldset>
+                    <form method="post" action="search.php">
                         <div class="form-group">
                             <select class="form-control" id="searchbox2" name="searchtext[]" multiple required>
                             </select>
@@ -104,6 +107,7 @@ include_once './backendless/autoload.php';
                                     echo '</tr>';
                                 }
                             } else if (isset ($_SESSION['sc'])){
+                                echo '<hr>';
                                 if (isset($_GET['offset'])) {
                                     $offset = $_GET['offset'];
                                     if (!$offset || $offset < 0) {
@@ -120,7 +124,7 @@ include_once './backendless/autoload.php';
                                 $query->setPageSize(10);
                                 $query->setOffset($offset);
                                 $data = Backendless::$Data->of('QA')->find($query)->getAsArray();
-                                $i = 1;
+                                $i = 1+$offset;
                                 foreach ($data as $d) {
                                     echo '<tr>';
                                     echo '<td>' . $i++ . '</td>';
@@ -138,12 +142,12 @@ include_once './backendless/autoload.php';
                             if ($offset == 0) {
                                 echo '<li class="disabled"><a href="#">Previous</a></li>';
                             } else {
-                                echo '<li><a href="ask.php?offset=' . ($offset - 10) . '">Previous</a></li>';
+                                echo '<li><a href="search.php?offset=' . ($offset - 10) . '">Previous</a></li>';
                             }
                             if (count($data) < 10) {
                                 echo '<li class="disabled"><a href="#">Next</a></li>';
                             } else {
-                                echo '<li><a href="ask.php?offset=' . ($offset + 10) . '">Next</a></li>';
+                                echo '<li><a href="search.php?offset=' . ($offset + 10) . '">Next</a></li>';
                             }
                             ?>
                         </ul>

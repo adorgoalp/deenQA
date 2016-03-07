@@ -33,20 +33,13 @@ include_once './backendless/autoload.php';
     </head>
     <body style="background-color: #D1D1D1;">
 
-        <div id='cssmenu'>
+       <div id='cssmenu'>
             <ul>
                 <li><a href='index.php'>DeenQA Home</a></li>
-                <li><a href='ask.php'>Ask</a></li>
+                <li><a href='search.php'>Search</a></li>
                 <li class='active'><a href='category.php'>Category</a></li>
+                <li><a href='ask.php'>Ask</a></li>
                 <li><a href='about.php'>About</a></li>
-                <li>
-                    <div style="margin-top: 8px; float: right;">
-                        <form class="pure-form">
-                            <input type="text" name="searchtext" style="margin-right: 8px;">
-                            <button type="submit" class="pure-button pure-button-primary">Search</button>
-                        </form>
-                    </div>
-                </li>
             </ul>
         </div>
         <div class="container">
