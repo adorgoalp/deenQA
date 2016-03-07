@@ -27,6 +27,7 @@ and open the template in the editor.
 include_once './backendless/autoload.php';
         Backendless::initApp('0F8F33A0-5515-0C9B-FFCB-F8A0A3E92A00', 'B1ACD24E-02A7-E964-FFA0-7D0ABB2FFD00', 'v1');
         include_once './deenQA_lib.php';
+        unset($_SESSION['sc']);
         ?>
         <title>Category</title>
     </head>
@@ -59,6 +60,7 @@ include_once './backendless/autoload.php';
                                 $query = new BackendlessDataQuery();
                                 $query->setPageSize(100);
                                 $data = Backendless::$Data->of('Category')->find($query)->getAsArray();
+                                $data = array_reverse($data);
                                 foreach ($data as $d) {
                                     echo '<tr>';
                                     echo '<td><a href="category.php?cat=' . $d['cat'] . '">' . $d['cat'] . '</a></td>';
@@ -73,7 +75,13 @@ include_once './backendless/autoload.php';
             <div class="panel panel-info" style="margin-top: 20px; width: 75%;float: left;overflow: hidden;">
                 <div class="panel-body">
                     <fieldset>
-                        <legend>All Category</legend>
+                        <?php
+                        $cat = 'All';
+                        if (isset($_GET['cat'])) {
+                            $cat = $_GET['cat'];
+                        }
+                        ?>
+                        <legend>Category: <?php echo $cat;?></legend>
                         <table class="table table-striped">
                             <tbody>
                                 <?php
@@ -85,17 +93,14 @@ include_once './backendless/autoload.php';
                                 } else {
                                     $offset = 0;
                                 }
-                                $cat = 'all';
-                                if (isset($_GET['cat'])) {
-                                    $cat = $_GET['cat'];
-                                }
+
                                 $query = new BackendlessDataQuery();
                                 $query->setPageSize(10);
                                 $query->setOffset($offset);
-                                if ($cat === 'all') {
+                                if ($cat === 'All') {
                                     
                                 } else {
-                                    //$query->setWhereClause('category = ' . $cat);
+                                    $query->setWhereClause("category LIKE  '%$cat%'");
                                 }
                                 $data = Backendless::$Data->of('QA')->find($query)->getAsArray();
                                 $i = 1 + $offset;

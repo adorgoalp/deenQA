@@ -130,6 +130,3 @@ td{
 #cssmenu > ul > li > a:hover:after {
   background: #96684E;
 }
-#cssmenu > ul :last-child {
-  float: right;
-}

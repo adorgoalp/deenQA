@@ -37,6 +37,7 @@ include_once './backendless/autoload.php';
                 <li><a href='index.php'>DeenQA Home</a></li>
                 <li><a href='ask.php'>Ask</a></li>
                 <li><a href='category.php'>Category</a></li>
+                <li class="active"><a href='#'>View QA</a></li>
                 <li><a href='about.php'>About</a></li>
                 <li>
                     <div style="margin-top: 8px; float: right;">
