@@ -35,7 +35,7 @@ and open the template in the editor.
         use backendless\exception\BackendlessException;
         use backendless\services\persistence\BackendlessDataQuery;
 
-        include_once './backendless/autoload.php';
+include_once './backendless/autoload.php';
         Backendless::initApp('0F8F33A0-5515-0C9B-FFCB-F8A0A3E92A00', 'B1ACD24E-02A7-E964-FFA0-7D0ABB2FFD00', 'v1');
         include_once './deenQA_lib.php';
         ?>
@@ -78,7 +78,7 @@ and open the template in the editor.
                                     $whereClause.= "question LIKE  '%$sw%' OR category LIKE  '%$sw%' OR ";
                                 }
                                 $whereClause = substr($whereClause, 0, strlen($whereClause) - 3);
-                                
+
                                 $_SESSION['sc'] = $whereClause;
                                 //echo $whereClause;
                                 if (isset($_GET['offset'])) {
@@ -101,10 +101,10 @@ and open the template in the editor.
                                     echo '<tr>';
                                     echo '<td>' . $i++ . '</td>';
                                     echo '<td>' . $d['title'] . '</td>';
-                                    echo '<td><a href="viewQA.php?q=' . $d['objectId'] . '" target="_blank">View full QA</a></td>';
+                                    echo '<td><a href="viewQA.php?q=' . $d['objectId'] . '" target="_blank">View</a></td>';
                                     echo '</tr>';
                                 }
-                            } else if (isset ($_SESSION['sc'])){
+                            } else if (isset($_SESSION['sc'])) {
                                 echo '<hr>';
                                 if (isset($_GET['offset'])) {
                                     $offset = $_GET['offset'];
@@ -122,34 +122,40 @@ and open the template in the editor.
                                 $query->setPageSize(10);
                                 $query->setOffset($offset);
                                 $data = Backendless::$Data->of('QA')->find($query)->getAsArray();
-                                $i = 1+$offset;
+                                $i = 1 + $offset;
                                 foreach ($data as $d) {
                                     echo '<tr>';
                                     echo '<td>' . $i++ . '</td>';
                                     echo '<td>' . $d['title'] . '</td>';
-                                    echo '<td><a href="viewQA.php?q=' . $d['objectId'] . '" target="_blank">View full QA</a></td>';
+                                    echo '<td><a href="viewQA.php?q=' . $d['objectId'] . '" target="_blank">View</a></td>';
                                     echo '</tr>';
                                 }
                             }
                             ?>
                         </tbody>
                     </table>
-                    <nav>
-                        <ul class="pager">
-                            <?php
-                            if ($offset == 0) {
-                                echo '<li class="disabled"><a href="#">Previous</a></li>';
-                            } else {
-                                echo '<li><a href="search.php?offset=' . ($offset - 10) . '">Previous</a></li>';
-                            }
-                            if (count($data) < 10) {
-                                echo '<li class="disabled"><a href="#">Next</a></li>';
-                            } else {
-                                echo '<li><a href="search.php?offset=' . ($offset + 10) . '">Next</a></li>';
-                            }
-                            ?>
-                        </ul>
-                    </nav>
+                    <?php
+                    if (isset($_SESSION['sc'])) {
+                        ?>
+                        <nav>
+                            <ul class="pager">
+                                <?php
+                                if ($offset == 0) {
+                                    echo '<li class="disabled"><a href="#">Previous</a></li>';
+                                } else {
+                                    echo '<li><a href="search.php?offset=' . ($offset - 10) . '">Previous</a></li>';
+                                }
+                                if (count($data) < 10) {
+                                    echo '<li class="disabled"><a href="#">Next</a></li>';
+                                } else {
+                                    echo '<li><a href="search.php?offset=' . ($offset + 10) . '">Next</a></li>';
+                                }
+                                ?>
+                            </ul>
+                        </nav>
+                    <?php
+                    }
+                    ?>
                 </div>
             </div>
         </div>

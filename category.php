@@ -45,7 +45,7 @@ include_once './backendless/autoload.php';
                 <div class="panel-body">
                     <fieldset>
                         <legend>Category</legend>
-                        <table class="table table-striped">
+                        <table class="table table-striped table-condensed">
                             <tbody>
                                 <?php
                                 $query = new BackendlessDataQuery();
@@ -73,7 +73,7 @@ include_once './backendless/autoload.php';
                         }
                         ?>
                         <legend>Category: <?php echo $cat;?></legend>
-                        <table class="table table-striped table-condensed">
+                        <table class="table table-striped">
                             <tbody>
                                 <?php
                                 if (isset($_GET['offset'])) {

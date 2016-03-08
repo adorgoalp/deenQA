@@ -40,7 +40,7 @@ include_once './backendless/autoload.php';
             </ul>
         </div>
         <div class="container">
-            <div class="panel panel-default " style="margin-top: 20px; background-color: #2b669a; ">
+            <div class="panel panel-default " style="margin-top: 20px; background-color: #527a7a; ">
                 <div class="panel-body">    
 
                     <?php
@@ -49,11 +49,13 @@ include_once './backendless/autoload.php';
                     //print_r($data);
                     echo '<legend style=" color:  #fff;">' . $data['title'] . '</legend>';
                     echo '<div class="list-group" style="white-space: pre-wrap;">';
-                    echo '<div class="list-group-item"  style="padding: 8px;background-color: palegreen;"><p>' . $data['question'] . '</p></div>';
-                    echo '<div class="list-group-item"  style="text-align: right; padding: 10px; background-color:  skyblue;">Question posted by- <strong>' . $data['questionBy'] . '</strong></div>';
+                    echo '<div class="list-group-item"  style="text-align: center;padding: 8px;background-color: #b3cccc;"><h2>প্রশ্ন</h2></div>';
+                    echo '<div class="list-group-item"  style="padding: 8px;background-color: #c2d6d6;"><p>' . $data['question'] . '</p></div>';
+                    echo '<div class="list-group-item"  style="text-align: right; padding: 10px; background-color:  #75a3a3;">Question posted by- <strong>' . $data['questionBy'] . '</strong></div>';
                     echo '<hr>';
-                    echo '<div class="list-group-item"  style="padding: 8px;background-color: palegreen;"><p>' . $data['answer'] . '</p></div>';
-                    echo '<div class="list-group-item"  style="text-align: right; padding: 10px; background-color:  skyblue;">Answer given by- <strong>' . $data['answeredBy'] . '</strong></div>';
+                    echo '<div class="list-group-item"  style="text-align: center;padding: 8px;background-color: #b3cccc;"><h2>উত্তর</h2></div>';
+                    echo '<div class="list-group-item"  style="padding: 8px;background-color: #c2d6d6;"><p>' . $data['answer'] . '</p></div>';
+                    echo '<div class="list-group-item"  style="text-align: right; padding: 10px; background-color:  #75a3a3;">Answer given by- <strong>' . $data['answeredBy'] . '</strong></div>';
                     ?>
                 </div>
             </div>

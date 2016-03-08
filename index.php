@@ -56,7 +56,7 @@ and open the template in the editor.
                                     echo '<tr>';
                                     echo '<td>' . $i++ . '</td>';
                                     echo '<td>' . $d['title'] . '</td>';
-                                    echo '<td><a href="viewQA.php?q=' . $d['objectId'] . '" target="_blank">View full QA</a></td>';
+                                    echo '<td><a href="viewQA.php?q=' . $d['objectId'] . '" target="_blank">View</a></td>';
                                     echo '</tr>';
                                 }
                                 ?>
@@ -70,7 +70,7 @@ and open the template in the editor.
                 <div class="panel-body" style="text-align: center;">
                     <fieldset>
                         <legend>Facebook এ আমরা</legend>
-                        <a href="https://web.facebook.com/groups/1495508444111218/"><img alt="Shoroee Shomadhan" src="fb.jpg" width="400" height="133"></a>
+                        <a href="https://facebook.com/groups/1495508444111218/" target="_blank"><img alt="Shoroee Shomadhan" src="fb.jpg" width="400" height="133"></a>
                     </fieldset>
                 </div>
             </div>
