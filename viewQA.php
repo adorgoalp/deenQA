@@ -12,7 +12,7 @@ and open the template in the editor.
         <meta charset="UTF-8">
         <link rel="stylesheet" href="css/bootstrap.min.css">
         <link rel="stylesheet" href="css/iftaCss.css">
-
+        <link rel="shortcut icon" type="image/png" href="favicon.png"/>
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
 

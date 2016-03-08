@@ -12,7 +12,7 @@ and open the template in the editor.
         <meta charset="UTF-8">
         <link rel="stylesheet" href="css/bootstrap.min.css">
         <link rel="stylesheet" href="css/iftaCss.css">
-
+        <link rel="shortcut icon" type="image/png" href="favicon.png"/>
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
@@ -31,7 +31,7 @@ include_once './backendless/autoload.php';
     </head>
     <body style="background-color: #D1D1D1;">
 
-       <div id='cssmenu'>
+        <div id='cssmenu'>
             <ul>
                 <li><a href='index.php'>DeenQA Home</a></li>
                 <li><a href='search.php'>Search</a></li>
@@ -72,7 +72,7 @@ include_once './backendless/autoload.php';
                             $cat = $_GET['cat'];
                         }
                         ?>
-                        <legend>Category: <?php echo $cat;?></legend>
+                        <legend>Category: <?php echo $cat; ?></legend>
                         <table class="table table-striped">
                             <tbody>
                                 <?php
