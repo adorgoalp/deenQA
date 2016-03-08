@@ -10,11 +10,8 @@ and open the template in the editor.
 <html>
     <head>
         <meta charset="UTF-8">
-        <link rel="stylesheet" href="pure/pure-min.css">
         <link rel="stylesheet" href="css/bootstrap.min.css">
-        <link rel="stylesheet" href="css/bootstrap-theme.min.css">
         <link rel="stylesheet" href="css/iftaCss.css">
-
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
@@ -24,7 +21,7 @@ and open the template in the editor.
         use backendless\exception\BackendlessException;
         use backendless\services\persistence\BackendlessDataQuery;
 
-include_once './backendless/autoload.php';
+        include_once './backendless/autoload.php';
         Backendless::initApp('0F8F33A0-5515-0C9B-FFCB-F8A0A3E92A00', 'B1ACD24E-02A7-E964-FFA0-7D0ABB2FFD00', 'v1');
         include_once './deenQA_lib.php';
         unset($_SESSION['sc']);

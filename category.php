@@ -10,9 +10,7 @@ and open the template in the editor.
 <html>
     <head>
         <meta charset="UTF-8">
-        <link rel="stylesheet" href="pure/pure-min.css">
         <link rel="stylesheet" href="css/bootstrap.min.css">
-        <link rel="stylesheet" href="css/bootstrap-theme.min.css">
         <link rel="stylesheet" href="css/iftaCss.css">
 
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -75,7 +73,7 @@ include_once './backendless/autoload.php';
                         }
                         ?>
                         <legend>Category: <?php echo $cat;?></legend>
-                        <table class="table table-striped">
+                        <table class="table table-striped table-condensed">
                             <tbody>
                                 <?php
                                 if (isset($_GET['offset'])) {
@@ -101,7 +99,7 @@ include_once './backendless/autoload.php';
                                     echo '<tr>';
                                     echo '<td>' . $i++ . '</td>';
                                     echo '<td>' . $d['title'] . '</td>';
-                                    echo '<td><a href="viewQA.php?q=' . $d['objectId'] . '" target="_blank">View full QA</a></td>';
+                                    echo '<td><a href="viewQA.php?q=' . $d['objectId'] . '" target="_blank">View</a></td>';
                                     echo '</tr>';
                                 }
                                 ?>
