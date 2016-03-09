@@ -32,7 +32,7 @@ include_once './backendless/autoload.php';
 
         <div id='cssmenu'>
             <ul>
-                <li><a href='index.php'>DeenQA Home</a></li>
+                <li><a href='index.php'>Home</a></li>
                 <li><a href='search.php'>Search</a></li>
                 <li><a href='category.php'>Category</a></li>
                 <li><a href='ask.php'>Ask</a></li>
@@ -43,17 +43,44 @@ include_once './backendless/autoload.php';
             <div class="panel panel-default" style="margin-top: 20px;">
                 <div class="panel-body">
                     <fieldset>
+                        <legend>Mission</legend>
+                        <p>
+                            যারা দৈনন্দিন নানাবিধ প্রশ্নের মুখোমুখি হন কিন্তু সম্মানিত 
+                            আলিমদের সাথে যোগাযোগ না থাকায় তা অজানাই থেকে যায়। ফলে ইসলাম পালনে নানাবিধ বিদআত আর ভুল বোঝাবুঝি থেকে যায়।
+                            <br>
+                            আমরা তাদের আর আলিম সমাজের মাঝে একটি সেতুবন্ধন তৈরি করে দিতে চাই।
+                        </p>
+                    </fieldset>
+                </div>
+            </div>
+            <div class="panel panel-default" style="margin-top: 20px;">
+                <div class="panel-body">
+                    <fieldset>
                         <legend>About</legend>
                         <p>
                             কুরআন-সুন্নাহ তথা শরিয়তের চার দলিল অনুসারে হানাফি ফিকহের উসুল অনুযায়ী <br>আপনাদের দৈনন্দিন জিজ্ঞাসার জবাব দিবেন মুহতারাম মুফতিগণ।<br>
                             <br>
-                            প্রধান মুফতিঃ হাফেজ মুফতি <strong>জিয়া রাহমান</strong> (দাঃবাঃ)<br>
+                            সার্বিক তত্ত্বাবধানে- মুহতারাম মুফতি <strong>আবুল কালাম জাকারিয়া</strong> (দাঃ বাঃ)।
                             <br>
-                            সম্মানিত মুফতিগণঃ<br>
+                            প্রধান মুফতি- হাফেজ মুফতি <strong>জিয়া রাহমান</strong> (দাঃবাঃ)<br>
+                            <br>
+                            সম্মানিত মুফতিগণ-<br>
                             <br>
                             ১। মুফতি <strong>দানিয়াল মাহমূদ</strong> (দাঃবাঃ)<br>
                             ২। হাফেজ মুফতি <strong>এম এম এইচ সালেহ আহমাদ</strong> (দাঃবাঃ)<br>
-                            ৩। মুফতি <strong>এমদাদ হক</strong> (দাঃবাঃ)</p>
+                            ৩। মুফতি <strong>এমদাদ হক</strong> (দাঃবাঃ)
+                        </p>
+                        <hr>
+                        <p>
+                            সমন্বয়ে - <strong><a href="https://facebook.com/ghurabakajol" target="_blank">মামুনুর রশীদ কাজল</a></strong>
+                            <br>
+                            সহযোগিতা ও <a href="https://facebook.com/shoroeeshomadhan/timeline" target="_blank">ফেসবুক পেইজ</a> পরিচালনায় 
+                            - <strong><a href="https://web.facebook.com/evilcrusher.towke" target="_blank">হিশাম ইবনে জুবায়ের</a></strong>
+                        </p>
+                        <hr>
+                        <p>
+                            সার্বিক ব্যবস্থাপনায়- <a href="https://facebook.com/nusuksyl/"  target="_blank">নুসুক - نسك - Nusuk</a>
+                        </p>
                     </fieldset>
                 </div>
             </div>

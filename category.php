@@ -33,7 +33,7 @@ include_once './backendless/autoload.php';
 
         <div id='cssmenu'>
             <ul>
-                <li><a href='index.php'>DeenQA Home</a></li>
+                <li><a href='index.php'>Home</a></li>
                 <li><a href='search.php'>Search</a></li>
                 <li class='active'><a href='category.php'>Category</a></li>
                 <li><a href='ask.php'>Ask</a></li>
