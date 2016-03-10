@@ -22,7 +22,7 @@ and open the template in the editor.
         use backendless\exception\BackendlessException;
         use backendless\services\persistence\BackendlessDataQuery;
 
-        include_once './backendless/autoload.php';
+include_once './backendless/autoload.php';
         Backendless::initApp('0F8F33A0-5515-0C9B-FFCB-F8A0A3E92A00', 'B1ACD24E-02A7-E964-FFA0-7D0ABB2FFD00', 'v1');
         include_once './deenQA_lib.php';
         unset($_SESSION['sc']);
@@ -42,6 +42,13 @@ and open the template in the editor.
         <div class="container">
             <div class="panel panel-default" style="margin-top: 20px;">
                 <div class="panel-body">
+                    <div class="fill">
+                        <img src="ban.jpg" style="max-height: auto;max-width: 100%" alt="banner">
+                    </div>
+                    <div class="clearfix"></div>
+                    <p style="text-align: right;">
+                        সার্বিক ব্যবস্থাপনায়- <a href="https://facebook.com/nusuksyl/"  target="_blank">নুসুক - نسك </a>
+                    </p>
                     <fieldset>
                         <legend>Last 10 QA posted</legend>
                         <table class="table table-striped">
@@ -71,7 +78,8 @@ and open the template in the editor.
                 <div class="panel-body" style="text-align: center;">
                     <fieldset>
                         <legend>Facebook এ আমরা</legend>
-                        <a href="https://facebook.com/groups/1495508444111218/" target="_blank"><img alt="Shoroee Shomadhan" src="fb.jpg" width="400" height="133"></a>
+                        <a href="https://facebook.com/groups/1495508444111218/" target="_blank"><img alt="Shoroee Shomadhan group" src="fbg.png"></a>
+                        <a href="https://facebook.com/shoroeeshomadhan/" target="_blank"><img alt="Shoroee Shomadhan page" src="fbp.png"></a>
                     </fieldset>
                 </div>
             </div>

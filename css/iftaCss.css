@@ -130,3 +130,15 @@ td{
 #cssmenu > ul > li > a:hover:after {
   background: #96684E;
 }
+div.fill {
+    position:relative;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    overflow:hidden
+}
+div.fill img {
+    flex-shrink:0;
+    min-width:100%;
+    min-height:100%
+}
