@@ -62,20 +62,20 @@ include_once './backendless/autoload.php';
                             <br>
                             সার্বিক তত্ত্বাবধানে- মুহতারাম মুফতি <strong>আবুল কালাম জাকারিয়া</strong> (দাঃ বাঃ)।
                             <br>
-                            প্রধান মুফতি- হাফেজ মুফতি <strong>জিয়া রাহমান</strong> (দাঃবাঃ)<br>
+                            প্রধান মুফতি- <a href="https://facebook.com/Zia.Eshona" target="_blank">হাফেয মুফতি জিয়া রাহমান (দাঃ বাঃ)</a><br>
                             <br>
                             সম্মানিত মুফতিগণ-<br>
                             <br>
-                            ১। মুফতি <strong>দানিয়াল মাহমূদ</strong> (দাঃবাঃ)<br>
-                            ২। হাফেজ মুফতি <strong>এম এম এইচ সালেহ আহমাদ</strong> (দাঃবাঃ)<br>
-                            ৩। মুফতি <strong>এমদাদ হক</strong> (দাঃবাঃ)
+                            ১। <a href="https://facebook.com/profile.php?id=100006155267608" target="_blank">হাফেজ মুফতি সালেহ আহমদ (দাঃ বাঃ)</a><br>
+                            ২। <a href="https://facebook.com/Danialbd" target="_blank">মুফতি দানিয়াল মাহমূদ (দাঃ বাঃ)</a><br>
+                            ৩। <a href="https://facebook.com/mimemdad" target="_blank">মুফতি ইমদাদুল হক (দাঃ বাঃ)</a>
                         </p>
                         <hr>
                         <p>
                             সমন্বয়ে - <strong><a href="https://facebook.com/ghurabakajol" target="_blank">মামুনুর রশীদ কাজল</a></strong>
                             <br>
                             সহযোগিতা ও <a href="https://facebook.com/shoroeeshomadhan/timeline" target="_blank">ফেসবুক পেইজ</a> পরিচালনায় 
-                            - <strong><a href="https://web.facebook.com/evilcrusher.towke" target="_blank">হিশাম ইবনে জুবায়ের</a></strong>
+                            - <strong>হিশাম ইবনে জুবায়ের</strong>
                         </p>
                         <hr>
                         <p>
